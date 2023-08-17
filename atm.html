@@ -1,0 +1,87 @@
+<script>
+
+
+            let name = prompt('Enter Your Name');
+            alert(`Welcome ${name} 
+            Please Note That The Default Pin Is 1234`);
+
+            let pin = +(prompt('Enter Your Pin'));
+            let balance = 10000;
+            if(pin===1234){
+                let option= +(prompt(`Select Your Desire Operation
+                1. Withdrawal
+                2. Check Balance
+                3. Transfer Fund
+                `));
+
+                if(option === 1){
+                    let wtdAmount = +(prompt('Enter Amount to Withdraw'));
+                    if (balance>=wtdAmount){
+                        balance -= wtdAmount;
+                    alert(`Dear ${name} ${wtdAmount} has left your account 
+                    Your balance is ${balance}`);
+                    }
+                    else{
+                        alert(`Dear ${name} your account is too low, you have ${balance} and 
+                        you are trying to withdraw ${wtdAmount}`);
+
+                    }
+                } 
+                else if(option === 2){ 
+                    alert(`Dear ${name} 
+                    Your balance is ${balance}`);
+                }
+                
+
+                else if(option === 3){ 
+                   let transTpye = +(prompt(`1. Transfer to same bank
+                            2. Transfer to other bank`));
+
+                            if(transTpye ===1){
+
+                                let accountNumber = +(prompt(`Enter the account Number`));
+                                alert(`Account Name: Olaoro Samson
+                                        Account Number: ${accountNumber}
+                                        Click okay to continue` );
+
+                                 let transferAmount =  +(prompt(`Amount to transfer`));
+                                 if(balance>=transferAmount)  {
+                                    alert(`Dear ${name} ${transferAmount} has been sent to ${accountNumber} 
+                                    with account name Olaoro Samson`)
+                                 }
+                                 else{
+                                    alert(`Account balance is too low your balance is ${balance}`)
+                                 }
+
+                            }
+                            else if(transTpye === 2){
+                               let accountNumber = +(prompt(`Enter the account Number`));
+                                let bankName = prompt('Enter Bank name');
+                                alert(`Account Name: Olaoro Samson
+                                        Account Number: ${accountNumber}
+                                        Bank Name: ${bankName}
+                                        Click okay to continue` );
+                                        transferAmount =  +(prompt(`Amount to transfer`));
+                                        if(balance>=transferAmount)  {
+                                             alert(`Dear ${name} ${transferAmount} has been sent to ${accountNumber} 
+                                             with account name Olaoro Samson 
+                                             domicile with ${bankName}`)
+                                 }
+
+
+                            }
+
+                            else{
+
+                                alert('Thank you.')
+                            }
+                }
+                else {
+                    alert('Thank you.')
+                }
+            }
+
+            else{
+            alert('incorrect Pin')
+            }
+</script>

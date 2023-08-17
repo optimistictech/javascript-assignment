@@ -1,0 +1,42 @@
+<script>
+let user = prompt("What is your name?");
+alert('Please note your USSD code is *945# and your default pin is 1234')
+let code = prompt(`Welcome, ${user}! Please enter the USSD  code:`);
+
+if (code === "*945#") {
+    let pin = prompt("Enter your 4-digit PIN number:");
+    
+    let options = prompt(`Hello ${user}, what would you like to do?
+    1. Withdrawal
+    2. Deposit
+    3. Send money to a third party`);
+    
+    if (options === "1") {
+        let withdraw = prompt("How much would you like to withdraw?");
+        if (!isNaN(withdraw)) {
+            alert(`Congratulations ${user}, your withdrawal of NGN ${withdraw} was successful.`);
+        } else {
+            alert("Invalid input. Please enter a valid number.");
+        }
+    } else if (options === "2") {
+        let deposit = prompt("How much would you like to deposit?");
+        if (!isNaN(deposit)) {
+            alert(`Congratulations ${user}, your deposit of NGN ${deposit} was successful.`);
+        } else {
+            alert("Invalid input. Please enter a valid number.");
+        }
+    } else if (options === "3") {
+        let accountNumber = prompt("Input recipient's account number:");
+        if (!isNaN(accountNumber)) {
+            alert(`Congratulations ${user}, your money transfer to account number ${accountNumber} was successful.`);
+        } else {
+            alert("Invalid input. Please enter a valid account number.");
+        }
+    } else {
+        alert("Invalid option selected.");
+    }
+} else {
+    alert("Please input the correct UBA transfer code and try again.");
+}
+
+</script>
