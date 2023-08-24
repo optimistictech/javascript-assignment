@@ -32,9 +32,9 @@
             alert(`Welcome ${name}.\nPlease Note That The Default Pin Is 1234`);
 
             let balance = 10000;
-            let pinTrial;
+            
 
-            for (pinTrial = 1; pinTrial <= 4; pinTrial++) {
+            for ( let pinTrial = 1; pinTrial <= 4; pinTrial++) {
                 let pin = +prompt('Enter Your Pin');
                 if (pin === 1234) {
                     let output = document.getElementById('output');
