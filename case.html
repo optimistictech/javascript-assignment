@@ -1,0 +1,60 @@
+ <script>
+      
+
+        let name = prompt('Enter Your Name');
+                    alert(`Welcome ${name} 
+                           Please Note That The Default Pin Is 1234`);
+
+
+             let pin = +(prompt('Enter Your Pin'));
+             let balance = 10000;
+             switch(pin){
+
+                case 1234: 
+
+                let option= +(prompt(`
+                Select Your Desire Operation
+                1. Withdrawal
+                2. Check Balance
+                
+                `));
+
+                switch (option) {
+
+                    case 1 :
+                    let wtdAmount = +(prompt('Enter Amount to Withdraw'));
+                    if (balance>=wtdAmount){
+                        balance -= wtdAmount;
+                    alert(`Dear ${name} ${wtdAmount} has left your account 
+                    Your balance is ${balance}`);
+                    }
+                    else{
+                        alert(`Dear ${name} your account is too low, you have ${balance} and 
+                        you are trying to withdraw ${wtdAmount}`);
+
+                    }
+
+                    break;
+
+                    case 2 :
+                    alert(`Dear ${name} 
+                    Your balance is ${balance}`);
+
+                    break;
+                    
+                    
+
+                    default:
+                    alert('Thank you'); 
+
+
+                }
+
+                break;
+                default :
+                alert('incorrect Pin');
+             }
+
+
+ 
+                        </script>

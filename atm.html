@@ -5,7 +5,10 @@
             alert(`Welcome ${name} 
             Please Note That The Default Pin Is 1234`);
 
+
+
             let pin = +(prompt('Enter Your Pin'));
+            
             let balance = 10000;
             if(pin===1234){
                 let option= +(prompt(`Select Your Desire Operation
@@ -44,7 +47,7 @@
                                         Account Number: ${accountNumber}
                                         Click okay to continue` );
 
-                                 let transferAmount =  +(prompt(`Amount to transfer`));
+                                  let transferAmount =  +(prompt(`Amount to transfer`));
                                  if(balance>=transferAmount)  {
                                     alert(`Dear ${name} ${transferAmount} has been sent to ${accountNumber} 
                                     with account name Olaoro Samson`)

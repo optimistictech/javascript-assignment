@@ -1,15 +1,134 @@
 <script> 
+/* 
+// default pin 1234;
+// default Balance 10000
+
+alert('welcome, your default pin is 1234')
+ let pin = +(prompt('Enter your pin'))
+   
+ if(pin===1234) {
+
+    let action = +(prompt(`Select Action Below
+                           1. Withdrawal
+                           2. Check Balance`))
+
+                           let balance = 10000
+
+                           if(action===1){
+
+                            let Withdrawal = +(prompt('Enter Amout to Withdraw'))
+
+                            if(Withdrawal <= balance){
 
 
-let name = '123';
+                                
+                                let newBalance = balance - Withdrawal
 
-if (name=== 123){
-    console.log('yes')
+                         //explain this
+                                alert(Withdrawal + ' has left your account, you have ' + newBalance + ' left' )
+
+
+
+
+
+
+
+                            }
+
+                            else {
+
+                                alert('insuficient Fund')
+                            }
+
+
+
+
+                           }
+
+                           else if (action===2){
+
+
+                           }
+
+                           else {
+
+                            alert('Thank you.')
+
+
+                           }
+
+
+            
+    
+
+ }
+
+ else {
+
+    alert ('Incorrect Pin')
+ }
+
+
+ */
+
+
+
+ // Mr Kenny Assignment
+
+
+/* let n = 1
+
+  while(n<=400){
+
+    if(n%7===0){
+        console.log('TIIDELAB')
+    }
+        else if (n%8===0){
+            console.log('cohort5')
+        }
+        else {
+            console.log(n)
+        }
+
+        n++
+    }
+    
+ */
+
+    // Funtion
+    
+let userNumber = function (a, b) {
+
+    if(a<b){
+    
+    
+    
+       while (a<=b){
+        console.log(a)
+
+        a++
+       }
+
+    }
+
+    else {
+        console.log('First letter must be lesser than second later')
+    }
+
+    
+       
 }
-else {
-    console.log('no')
-}
+
+a= prompt('enter first number')
+b = prompt ('enter Second number')
+
+userNumber(a,b)
+    
+
+ 
+  
 
 
+ 
 
 </script>
