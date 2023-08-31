@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS -->
+    <style>
+      #users {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: auto auto;
+      }
+      .user {
+        min-width: 150px;
+        background-color: rgb(77, 255, 101);
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+      img {
+        display: block;
+        max-width: 200px;
+        max-height: 150px;
+        border: 5px solid white;
+        align-items: center;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      #controls {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        display: flex;
+      }
+
+      button {
+        width: 150px;
+        padding: 10px;
+        margin: 20px;
+        background-color: green;
+        color: white;
+        cursor: pointer;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Application of DOM and Array Methods</h1>
+    <div id="controls">
+      <button onclick="removeFirstUser()">Remove First User</button>
+      <button onclick="removeLastUser()">Remove Last User</button>
+
+      <button onclick="window.location.reload()">Refresh</button>
+    </div>
+
+    <div id="users"></div>
+
+    <!-- SCRIPT -->
+    <script>
+      let users = [
+        {
+          firstName: "Caleb",
+          lastName: "Olubayo",
+          email: "bayo@mail.com",
+          profileImage: "Images/img1.jpg",
+        },
+
+        {
+          firstName: "Femi",
+          lastName: "Adie",
+          email: "grace@mail.com",
+          profileImage: "Images/img2.jpg",
+        },
+
+        {
+          firstName: "Iyanuoluwa",
+          lastName: "Adetunji",
+          email: "bayo@mail.com",
+          profileImage: "Images/img3.jpg",
+        },
+      ];
+
+      let userContainer = document.getElementById("users");
+      renderUsers();
+
+      function renderUsers() {
+        let userBox = "";
+        users.forEach((user) => {
+          userBox += `<div class="user">
+            <img src="${user.profileImage}" alt="${user.firstName} ">
+            ${user.firstName} ${user.lastName} <br>
+          ${user.email}</div>`;
+          userContainer.innerHTML = userBox;
+        });
+      }
+
+      function removeFirstUser() {
+        users.shift();
+        renderUsers();
+      }
+
+      function removeLastUser() {
+        users.pop();
+        renderUsers(); //Call the DOM
+      }
+    </script>
+  </body>
+</html>
